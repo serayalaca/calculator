@@ -1,53 +1,53 @@
-def topla(a, b):
+def add(a, b):
     return a + b
 
-def cikar(a, b):
+def subtract(a, b):
     return a - b
 
-def carp(a, b):
+def multiply(a, b):
     return a * b
 
-def bol(a, b):
+def divide(a, b):
     if b == 0:
-        return "Hata: Sıfıra bölünemez!"
+        return "Error: Cannot divide by zero!"
     return a / b
 
-def hesap_makinesi():
-    print("Temel Hesap Makinesi")
+def calculator():
+    print("Basic Calculator")
     while True:
-        print("\nİşlem seçin:")
-        print("1- Toplama")
-        print("2- Çıkarma")
-        print("3- Çarpma")
-        print("4- Bölme")
-        print("5- Çıkış")
+        print("\nChoose an operation:")
+        print("1- Add")
+        print("2- Subtract")
+        print("3- Multiply")
+        print("4- Divide")
+        print("5- Exit")
 
-        secim = input("Seçiminiz: ")
-        if secim == '5':
-            print("Programdan çıkılıyor...")
+        choice = input("Your choice: ")
+        if choice == '5':
+            print("Exiting the program...")
             break
 
-        if secim not in ('1','2','3','4'):
-            print("Geçersiz seçim!")
+        if choice not in ('1', '2', '3', '4'):
+            print("Invalid choice! Please try again.")
             continue
 
         try:
-            sayi1 = float(input("Birinci sayıyı girin: "))
-            sayi2 = float(input("İkinci sayıyı girin: "))
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
         except ValueError:
-            print("Hatalı giriş! Lütfen sayı girin.")
+            print("Invalid input! Please enter numbers only.")
             continue
 
-        if secim == '1':
-            sonuc = topla(sayi1, sayi2)
-        elif secim == '2':
-            sonuc = cikar(sayi1, sayi2)
-        elif secim == '3':
-            sonuc = carp(sayi1, sayi2)
-        elif secim == '4':
-            sonuc = bol(sayi1, sayi2)
+        if choice == '1':
+            result = add(num1, num2)
+        elif choice == '2':
+            result = subtract(num1, num2)
+        elif choice == '3':
+            result = multiply(num1, num2)
+        elif choice == '4':
+            result = divide(num1, num2)
 
-        print("Sonuç:", sonuc)
+        print("Result:", result)
 
 if __name__ == "__main__":
-    hesap_makinesi()
+    calculator()
